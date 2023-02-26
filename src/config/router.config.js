@@ -895,8 +895,8 @@ export const OriginalRouterMap = [
       },
       //测试
       {
-        path: '/test',
-        name: 'test',
+        path: '/examine',
+        name: 'examine',
         component: RouteView,
         redirect: '/test',
         meta: { title: '测试页面', keepAlive: true, icon: 'check-circle-o', permission: ['S02'] },
@@ -904,7 +904,7 @@ export const OriginalRouterMap = [
           {
             path: '/test/application',
             name: 'application',
-            component: () => import('@/views/test/application/AppList'),
+            component: () => import('@/views/examine/application/AppList'),
             meta: {
               title: '病理申请测试',
               topName: '病理申请',
@@ -915,7 +915,7 @@ export const OriginalRouterMap = [
           {
             path: '/test/dynamicTestList',
             name: 'dynamicTestList',
-            component: () => import('@/views/test/dynamicTest/dynamicTestList'),
+            component: () => import('@/views/examine/dynamicTest/dynamicTestList'),
             meta: {
               title: '组件测试',
               topName: '病理申请',
