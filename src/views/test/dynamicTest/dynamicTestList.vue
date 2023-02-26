@@ -210,7 +210,6 @@ export default {
 * {
   box-sizing: border-box;
 }
-
 .dynamic-com-area {
   width: 100%;
   // height: 500px;

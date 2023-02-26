@@ -15,12 +15,10 @@ export default {
   },
   data() {
     return {
-      // title: this.title,
+      title12: this.title,
     };
   },
 };
 </script>
 
-<style lang="less" scoped>
-
-</style>
+<style lang="less" scoped></style>
