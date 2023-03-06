@@ -358,8 +358,7 @@ export const asyncRouterMap = [
           {
             path: '/statistic/AppOrderInfo',
             name: 'AppOrderInfo',
-            component: () =>
-              import(/* webpackChunkName: "result" */ '@/views/statistic/AppOrderInfo'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/statistic/AppOrderInfo'),
             meta: {
               title: 'menu.statistic.appOrderInfo',
               keepAlive: false,
@@ -370,8 +369,7 @@ export const asyncRouterMap = [
           {
             path: '/statistic/PackageAppOrderInfo',
             name: 'PackageAppOrderInfo',
-            component: () =>
-              import(/* webpackChunkName: "result" */ '@/views/statistic/PackageAppOrderInfo'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/statistic/PackageAppOrderInfo'),
             meta: {
               title: 'menu.statistic.packageAppOrderInfo',
               keepAlive: false,
@@ -451,29 +449,39 @@ export const asyncRouterMap = [
           },
         ],
       },
-      //测试
+      //测试练习examine
       {
-        path: '/test',
-        name: 'test',
+        path: '/examine',
+        name: 'examine',
         component: RouteView,
-        redirect: '/test',
         meta: { title: '测试页面', keepAlive: true, icon: 'check-circle-o', permission: ['S02'] },
         children: [
           {
-            path: '/test/application',
+            path: '/examine/application',
             name: 'application',
-            component: () => import('@/views/test/application/AppList'),
+            component: () => import('@/views/examine/application/AppListNew'),
             meta: {
-              title: '病理申请测试',
+              title: '病理申请',
               topName: '病理申请',
               keepAlive: true,
-              permission: ['A02001'],
+              // permission: ['A02001'],
             },
           },
           {
-            path: '/test/dynamicTestList',
+            path: '/examine/sampling',
+            name: 'SamplingList',
+            component: () => import('@/views/examine/sampling/SamplingList'),
+            meta: {
+              title: '取材',
+              topName: '病理取材',
+              keepAlive: true,
+              // permission: ['A02001'],
+            },
+          },
+          {
+            path: '/examine/dynamicTestList',
             name: 'dynamicTestList',
-            component: () => import('@/views/test/dynamicTest/dynamicTestList'),
+            component: () => import('@/views/examine/dynamicTest/dynamicTestList'),
             meta: {
               title: '组件测试',
               topName: '病理申请',
@@ -833,8 +841,7 @@ export const OriginalRouterMap = [
           {
             path: '/statistic/AppOrderInfo',
             name: 'AppOrderInfo',
-            component: () =>
-              import(/* webpackChunkName: "result" */ '@/views/statistic/AppOrderInfo'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/statistic/AppOrderInfo'),
             meta: {
               title: 'menu.statistic.appOrderInfo',
               keepAlive: false,
@@ -845,8 +852,7 @@ export const OriginalRouterMap = [
           {
             path: '/statistic/PackageAppOrderInfo',
             name: 'PackageAppOrderInfo',
-            component: () =>
-              import(/* webpackChunkName: "result" */ '@/views/statistic/PackageAppOrderInfo'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/statistic/PackageAppOrderInfo'),
             meta: {
               title: 'menu.statistic.packageAppOrderInfo',
               keepAlive: false,
@@ -910,6 +916,17 @@ export const OriginalRouterMap = [
               topName: '病理申请',
               keepAlive: true,
               permission: ['A02001'],
+            },
+          },
+          {
+            path: '/examine/sampling',
+            name: 'SamplingList',
+            component: () => import('@/views/examine/sampling/SamplingList'),
+            meta: {
+              title: '取材',
+              topName: '病理取材',
+              keepAlive: true,
+              // permission: ['A02001'],
             },
           },
           {

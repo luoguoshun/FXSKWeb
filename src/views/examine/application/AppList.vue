@@ -8,13 +8,7 @@
             <a-select placeholder="选择类型" v-model="query.type" style="width: 30%">
               <a-select-option v-for="d in keyTypeDatas" :key="d.value" :value="d.value">{{ d.text }}</a-select-option>
             </a-select>
-            <a-input
-              style="width: 65%"
-              class="ant-input"
-              v-model="query.keys"
-              placeholder="输入关键字值"
-              @keypress.13.native="search"
-            />
+            <a-input style="width: 65%" class="ant-input" v-model="query.keys" placeholder="输入关键字值" @keypress.13.native="search" />
           </a-input-group>
         </a-col>
 
@@ -24,7 +18,7 @@
         <a-col :key="2" :span="2"> <a-date-picker v-model="query.endDate" placeholder="结束时间" /></a-col>
         <a-col :key="3" :span="4">
           <span style="width: 60px">送检类型</span>
-          <a-select show-search placeholder="送检类型" v-model="query.pathologyType" >
+          <a-select show-search placeholder="送检类型" v-model="query.pathologyType">
             <a-select-option v-for="(d, index) in pathologyType" :key="d.value + index" :value="d.value">
               {{ d.text }}
             </a-select-option>
@@ -67,8 +61,7 @@
             <span class="ant-badge-status-text">已提交</span>
           </span>
           <span v-if="text == 2">
-            <span class="ant-badge-status-dot ant-badge-status-waring"></span
-            ><span class="ant-badge-status-text"> 退回 </span>
+            <span class="ant-badge-status-dot ant-badge-status-waring"></span><span class="ant-badge-status-text"> 退回 </span>
           </span>
         </template>
         <template slot="Sex" slot-scope="text">
@@ -94,13 +87,7 @@
             <a-divider type="vertical" />
             <a @click="editNew(record)">修改（新）</a>
             <a-divider type="vertical" />
-            <a-popconfirm
-              title="确定删除数据?"
-              ok-text="是"
-              cancel-text="否"
-              @confirm="del(record)"
-              style="color: #f50"
-            >
+            <a-popconfirm title="确定删除数据?" ok-text="是" cancel-text="否" @confirm="del(record)" style="color: #f50">
               <a type="primary" href="#">删除</a>
             </a-popconfirm>
           </template>
@@ -116,7 +103,7 @@
 import { defineComponent, message } from 'vue';
 //导入接口
 import { getPathologyTypes } from '@/api/system/dictionary';
-import { getOrderData, delOrder } from '@/api/test/application';
+import { getOrderData, delOrder } from '@/api/examine/application';
 import { getDepartmentData } from '@/api/basics/department';
 import { getStrategyTemplate } from '@/api/system/strategy';
 import moment from 'moment';
@@ -245,12 +232,8 @@ export default defineComponent({
         message.warning('结束时间不能小于开始时间');
         return;
       }
-      this.query.startDate = CheckField(this.query.startDate)
-        ? moment(this.query.startDate).format('YYYY-MM-DD 00:00:01')
-        : null;
-      this.query.endDate = CheckField(this.query.endDate)
-        ? moment(this.query.endDate).format('YYYY-MM-DD 23:59:59')
-        : null;
+      this.query.startDate = CheckField(this.query.startDate) ? moment(this.query.startDate).format('YYYY-MM-DD 00:00:01') : null;
+      this.query.endDate = CheckField(this.query.endDate) ? moment(this.query.endDate).format('YYYY-MM-DD 23:59:59') : null;
       this.pagination.current = 1;
       this.load();
     },

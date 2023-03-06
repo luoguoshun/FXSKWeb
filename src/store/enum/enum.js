@@ -57,8 +57,8 @@ const nationType = [
   { value: '52', text: '塔塔尔族' },
   { value: '53', text: '赫哲族' },
   { value: '54', text: '高山族' },
-  { value: '55', text: '珞巴族' }
-]
+  { value: '55', text: '珞巴族' },
+];
 const NodeTypeDatas = [
   { value: '0', text: '申请录入' },
   { value: '1', text: '标本采集' },
@@ -66,8 +66,8 @@ const NodeTypeDatas = [
   { value: '3', text: '运送中' },
   { value: '4', text: '完成' },
   { value: '5', text: '退回' },
-  { value: '6', text: '标本打包' }
-]
+  { value: '6', text: '标本打包' },
+];
 const FixLiquid = [
   { value: '无需固定液', text: '无需固定液' },
   { value: '10%福尔马林溶液', text: '10%福尔马林溶液' },
@@ -77,31 +77,74 @@ const FixLiquid = [
   { value: 'Bouin', text: 'Bouin' },
   { value: 'Susa', text: 'Susa' },
   { value: 'Zamboni', text: 'Zamboni' },
-  { value: 'Zenker', text: 'Zenker' }
-]
+  { value: 'Zenker', text: 'Zenker' },
+];
 const PrintTarget = [
   { value: 'Apply', text: '申请单标签' },
   { value: 'Specimen', text: '标本标签' },
-  { value: 'Packaging', text: '打包标签' }
-]
+  { value: 'Packaging', text: '打包标签' },
+];
 const PrintTemplateTarget = [
   { value: 'Apply', text: '申请单' },
   { value: 'Specimen', text: '标本' },
-  { value: 'Packaging', text: '打包' }
-]
+  { value: 'Packaging', text: '打包' },
+];
 const ObjectType = [
   { value: 'bool', text: '布尔' },
   { value: 'string', text: '字符串' },
-  { value: 'number', text: '数字' }
-]
-const MapType = [
-  { value: 'Dept', text: '科室' }
-]
+  { value: 'number', text: '数字' },
+];
+const MapType = [{ value: 'Dept', text: '科室' }];
+
 const MapValueType = [
   { value: 'string', text: '字符串' },
   { value: 'json', text: 'Json' },
-  { value: 'xml', text: 'XML' }
-]
+  { value: 'xml', text: 'XML' },
+];
+
+const HospitalData = [
+  { value: 'lhrmyy', text: '罗湖人民医院' },
+  { value: 'gdrmyy', text: '广东省人名医院' },
+  { value: 'gdkqyy', text: '广东省口腔医院' },
+];
+const DoctorData = [
+  {
+    Id: 1,
+    DoctorName: '罗熊熊',
+    DoctorPhone: '12345678911',
+    DoctorEmail: '1922684245@qq.com',
+    DoctorAddress: '广西壮族自治区南宁市',
+    DoctorDepartment: '血液内科',
+    DoctorDepartmentId: '1101040050000',
+  },
+  {
+    Id: 2,
+    DoctorName: '吴健',
+    DoctorPhone: '12345678911',
+    DoctorEmail: '1922684245@qq.com',
+    DoctorAddress: '广西壮族自治区南宁市',
+    DoctorDepartment: '血液内科',
+    DoctorDepartmentId: '1101040050000',
+  },
+  {
+    Id: 3,
+    DoctorName: '六亿',
+    DoctorPhone: '12345678911',
+    DoctorEmail: '1922684245@qq.com',
+    DoctorAddress: '广西壮族自治区南宁市',
+    DoctorDepartment: '呼吸内科',
+    DoctorDepartmentId: '1101040030000',
+  },
+  {
+    Id: 4,
+    DoctorName: '黎算',
+    DoctorPhone: '12345678911',
+    DoctorEmail: '1922684245@qq.com',
+    DoctorAddress: '广西壮族自治区南宁市',
+    DoctorDepartment: '呼吸内科',
+    DoctorDepartmentId: '1101040030000',
+  },
+];
 export default {
   nationType,
   NodeTypeDatas,
@@ -110,5 +153,7 @@ export default {
   PrintTemplateTarget,
   ObjectType,
   MapType,
-  MapValueType
-}
+  MapValueType,
+  HospitalData,
+  DoctorData,
+};
