@@ -221,6 +221,7 @@
 </template>
 
 <script>
+
 import { getSamplingInfoList, createBoxs, getBoxListBySepecimenId, saveSamplingTask, deleteBoxs } from '@/api/examine/sampling';
 //导入接口
 import { getPathologyTypes } from '@/api/system/dictionary';

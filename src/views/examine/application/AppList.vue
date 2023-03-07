@@ -24,14 +24,6 @@
             </a-select-option>
           </a-select>
         </a-col>
-        <!-- <a-col :key="14" :span="4">
-          <span>手术室</span>
-          <a-select show-search optionFilterProp="children" v-model="query.department" style="width: 150px">
-            <a-select-option v-for="d in departmentData" :key="d.value" :value="d.value">
-              {{ d.text }}
-            </a-select-option>
-          </a-select>
-        </a-col> -->
       </a-row>
       <!-- 操作按钮 -->
       <a-row :span="12" class="operation-row">
@@ -103,7 +95,7 @@
 import { defineComponent, message } from 'vue';
 //导入接口
 import { getPathologyTypes } from '@/api/system/dictionary';
-import { getOrderData, delOrder } from '@/api/examine/application';
+import { getOrderData } from '@/api/examine/application';
 import { getDepartmentData } from '@/api/basics/department';
 import { getStrategyTemplate } from '@/api/system/strategy';
 import moment from 'moment';
@@ -307,19 +299,19 @@ export default defineComponent({
     },
     //删除申请
     del(record) {
-      delOrder(record.Id)
-        .then((res) => {
-          if (res.HttpStatusCode === 200 && res.ResultType === 1) {
-            PromptBox('操作成功！', 'success', 'topRight', 2);
-            // Mark：定时提交成功一秒钟后刷新列表，防止数据未刷新
-            this.load();
-          } else {
-            PromptBox(res.Message, 'error', 'topRight', 2);
-          }
-        })
-        .catch((error) => {
-          PromptBox(res.Message, 'error', 'topRight', 2);
-        });
+      // delOrder(record.Id)
+      //   .then((res) => {
+      //     if (res.HttpStatusCode === 200 && res.ResultType === 1) {
+      //       PromptBox('操作成功！', 'success', 'topRight', 2);
+      //       // Mark：定时提交成功一秒钟后刷新列表，防止数据未刷新
+      //       this.load();
+      //     } else {
+      //       PromptBox(res.Message, 'error', 'topRight', 2);
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     PromptBox(res.Message, 'error', 'topRight', 2);
+      //   });
     },
     //页码改变的回调
     handleTableChange(pagination) {
