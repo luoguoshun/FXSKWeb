@@ -1,3 +1,7 @@
+/*
+ * @LastEditTime: 2023-03-07 10:43:46
+ * @Descripttion: 
+ */
 import axios from 'axios'
 import store from '@/store'
 import storage from 'store'
@@ -5,8 +9,7 @@ import notification from 'ant-design-vue/es/notification'
 import { VueAxios } from './axios'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
 import qs from 'qs'
-import { CheckField } from './util'
-// 创建 axios 实例
+// 创建 axios 实例 
 const request = axios.create({
   // API 请求的默认前缀
   baseURL: storage.get('baseURL'),
